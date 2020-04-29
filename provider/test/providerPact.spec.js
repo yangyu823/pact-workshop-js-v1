@@ -25,15 +25,15 @@ server.listen(8081, () => {
 
 // Verify that the provider meets all consumer expectations
 describe('Pact Verification', () => {
-  it('should validate the expectations of Our Little Consumer', () => {
+  it('should validate the expectations of the Consumer', () => {
     let opts = {
-      provider: 'Our Provider',
+      provider: 'PoC - Pact-broker-provider',
       providerBaseUrl: 'http://localhost:8081',
       providerStatesSetupUrl: 'http://localhost:8081/setup',
-      pactBrokerUrl: 'https://test.pact.dius.com.au/',
+      pactBrokerUrl: 'http://yyan.io:9292/',
       tags: ['prod'],
-      pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-      pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
+      pactBrokerUsername: 'CSPUsr2',
+      pactBrokerPassword: 'Password1',
       publishVerificationResult: true,
       providerVersion: '1.0.0',
     }

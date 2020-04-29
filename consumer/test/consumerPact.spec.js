@@ -13,8 +13,8 @@ chai.use(chaiAsPromised)
 const LOG_LEVEL = process.env.LOG_LEVEL || 'WARN'
 
 const provider = new Pact({
-  consumer: 'Our Little Consumer',
-  provider: 'Our Provider',
+  consumer: 'PoC - Pact-broker-consumer',
+  provider: 'PoC - Pact-broker-provider',
   port: API_PORT,
   log: path.resolve(process.cwd(), 'logs', 'pact.log'),
   dir: path.resolve(process.cwd(), 'pacts'),
@@ -26,7 +26,7 @@ const submissionDate = new Date().toISOString()
 const dateRegex =
   '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\+|\\-)\\d{2}:\\d{2}'
 
-describe('Pact with Our Provider', () => {
+describe('Pact with the Provider', () => {
   before(() => {
     return provider.setup()
   })
