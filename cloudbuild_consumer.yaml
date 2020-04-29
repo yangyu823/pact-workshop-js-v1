@@ -5,4 +5,7 @@ steps:
   - name: node
     entrypoint: npm
     args: ['run' ,'test:pact:consumer']
+  - name: node
+    entrypoint: npm
+    args: ['run' ,'test:pact:publish']
 
