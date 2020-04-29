@@ -4,5 +4,5 @@ steps:
     args: ['install']
   - name: node
     entrypoint: npm
-    args: ['run test:pact:consumer']
+    args: ['run' 'test:pact:consumer']
 
