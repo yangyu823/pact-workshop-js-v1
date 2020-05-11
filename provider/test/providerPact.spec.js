@@ -30,7 +30,7 @@ describe('Pact Verification', () => {
       provider: 'PoC - Pact-broker-provider',
       providerBaseUrl: 'http://localhost:8081',
       providerStatesSetupUrl: 'http://localhost:8081/setup',
-      pactBrokerUrl: 'http://yyan.io:9292/',
+      pactBrokerUrl: 'http://35.244.122.147/',
       tags: ['prod'],
       pactBrokerUsername: 'CSPUsr2',
       pactBrokerPassword: 'Password1',
