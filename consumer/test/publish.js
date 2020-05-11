@@ -1,14 +1,15 @@
 const pact = require('@pact-foundation/pact-node')
 const path = require('path')
+const gitHash = require('child_process')
+    .execSync('git rev-parse --short HEAD')
+    .toString().trim();
 const opts = {
   pactFilesOrDirs: [path.resolve(__dirname, '../../pacts/')],
   pactBroker: 'http://35.244.122.147/',
   pactBrokerUsername: 'CSPUsr2',
   pactBrokerPassword: 'Password1',
   tags: ['prod', 'test'],
-  consumerVersion:
-    '1.0.' +
-    (process.env.USER ? process.env.USER : Math.floor(new Date() / 1000)),
+  consumerVersion: gitHash
 }
 
 pact
