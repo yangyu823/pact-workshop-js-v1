@@ -16,6 +16,7 @@ pact
   .then(() => {
     console.log('Pact contract publishing complete!')
     console.log('')
+    console.log('')
     console.log('Head over to http://35.244.122.147// and login with')
     console.log('=> Username: CSPUsr2')
     console.log('=> Password: Password1')
