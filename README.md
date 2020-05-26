@@ -59,22 +59,17 @@ curl -X POST -T request.json -H "Authorization: Bearer $(gcloud config config-he
   }],
   "request": {
     "method": "POST",
-    "url": "https://api.travis-ci.com/repo/yangyu823%2Fpact-workshop-js-v1/requests",
+    "url": "https://cloudbuild.googleapis.com/v1/projects/poc-pact-broker/triggers/4dd759d0-ecdc-4dd9-ad55-af6dd1d32524:run",
     "headers": {
+      "Authorization": "Bearer ya29.c.KmnMBxKd6XvpHDX8xnIoztoPOLmtFanGDa1oWsAQS1mdQKZdFWM12blNXCcwbHGANHI_F3KloFd0gOj-ToTU7WK3Ui0OUtXX4ZHrlhBvCSmc3-d8ZtYdBWW4cJChiRakvC2BM2bnv_3PheA",
       "Content-Type": "application/json",
-      "Accept": "application/json",
-      "Travis-API-Version": "3",
-      "Authorization": "token Aw4s5fnNJr9hOAq27DCTpQ"
+      "Accept": "application/json"
     },
     "body": {
-      "request": {
-        "message": "Triggered by changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber}",
-        "branch":"provider"
-      }
+      "branchName": "provider",
+      "repoName": "pact-workshop-js-v1"
     }
   }
 }
-
-
 
 ```
