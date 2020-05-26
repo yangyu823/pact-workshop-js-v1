@@ -1,9 +1,9 @@
-language: node_js
-node_js:
-  - "stable"
-install:
-  - npm install
-
-script:
-  - npm run test:pact:consumer
-  - npm run test:pact:publish
+#language: node_js
+#node_js:
+#  - "stable"
+#install:
+#  - npm install
+#
+#script:
+#  - npm run test:pact:consumer
+#  - npm run test:pact:publish
