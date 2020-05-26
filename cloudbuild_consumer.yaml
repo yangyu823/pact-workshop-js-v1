@@ -4,7 +4,8 @@ steps:
     args: ['install']
   - name: node
     entrypoint: npm
-    args: ['run' ,'test:pact:consumer']
-  - name: node
-    entrypoint: npm
-    args: ['run' ,'test:pact:publish']
+    args:
+    - '-c'
+    - |
+      run test:pact:consumer
+      run test:pact:publish
