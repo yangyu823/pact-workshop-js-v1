@@ -61,7 +61,7 @@ curl -X POST -T request.json -H "Authorization: Bearer $(gcloud config config-he
     "method": "POST",
     "url": "https://cloudbuild.googleapis.com/v1/projects/poc-pact-broker/triggers/4dd759d0-ecdc-4dd9-ad55-af6dd1d32524:run",
     "headers": {
-      "Authorization": "Bearer ya29.c.KmnMBxKd6XvpHDX8xnIoztoPOLmtFanGDa1oWsAQS1mdQKZdFWM12blNXCcwbHGANHI_F3KloFd0gOj-ToTU7WK3Ui0OUtXX4ZHrlhBvCSmc3-d8ZtYdBWW4cJChiRakvC2BM2bnv_3PheA",
+      "Authorization": "Bearer $(gcloud config config-helper --format='value(credential.access_token)')",
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
@@ -72,4 +72,21 @@ curl -X POST -T request.json -H "Authorization: Bearer $(gcloud config config-he
   }
 }
 
+```
+
+```bash
+export PACT_BROKER_BASE_URL="http://35.244.95.135/"
+export PACT_BROKER_USERNAME="CSPUsr2"
+export PACT_BROKER_PASSWORD="Password1"
+```
+## can-i-deploy
+```bash
+docker run --rm \
+ -e PACT_BROKER_BASE_URL \
+ -e PACT_BROKER_USERNAME \
+ -e PACT_BROKER_PASSWORD \
+  pactfoundation/pact-cli:latest \
+  broker can-i-deploy \
+  --pacticipant PoC - Pact-broker-consumerr \
+  --latest
 ```
