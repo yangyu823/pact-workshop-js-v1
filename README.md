@@ -32,7 +32,7 @@ https://cloud.google.com/cloud-build/docs/api/reference/rest/v1/projects.trigger
 
 curl --request POST \
   'https://cloudbuild.googleapis.com/v1/projects/poc-pact-broker/triggers/4dd759d0-ecdc-4dd9-ad55-af6dd1d32524:run' \
-  --header 'Authorization: Bearer $(gcloud config config-helper --format='value(credential.access_token)')' \
+  --header "Authorization: Bearer $(gcloud config config-helper --format='value(credential.access_token)')" \
   --header 'Accept: application/json' \
   --header 'Content-Type: application/json' \
   --data '{"branchName":"provider","repoName":"pact-workshop-js-v1"}' \
@@ -40,7 +40,7 @@ curl --request POST \
 
 curl --request POST \
   'https://cloudbuild.googleapis.com/v1/projects/poc-pact-broker/triggers/4dd759d0-ecdc-4dd9-ad55-af6dd1d32524:run' \
-  --header 'Authorization: Bearer ya29.c.KmnMB4cRui5VM4TIyrdT8HaCm6TZCPeh4Z1AB6Cu_GwKWiBdW8gZjAx09tuxD0ZAqHtmxSS0QdLMBLf4-5lYnHCOJeDmTE6ON9K1J2g52rrVXKEswqauwiZMTgzgHm2CbXH-57LMs-na48A' \
+  --header 'Authorization: Bearer ya29.a0AfH6SMCB2AdNF-gsxtUwSY6Ymq9Bm9c7qs5Z2ylGBfD4KT3PtBszY3-c2TCZjSd83nQnjPisv-UMSJ7iGrHHbrbauMFwggrsu2objQltaHL9ZD8Dx-isVfRfmGGigk0kljiBA8Xu-qiYzD45YjhlhTiIlPqsSXsXvugrR-Knt3GYrw' \
   --header 'Accept: application/json' \
   --header 'Content-Type: application/json' \
   --data '{"branchName":"provider","repoName":"pact-workshop-js-v1"}' \
