@@ -78,6 +78,7 @@ curl -X POST -T request.json -H "Authorization: Bearer $(gcloud config config-he
 export PACT_BROKER_BASE_URL="http://35.244.95.135/"
 export PACT_BROKER_USERNAME="CSPUsr2"
 export PACT_BROKER_PASSWORD="Password1"
+export BEAR_TOKEN=$(gcloud config config-helper --format='value(credential.access_token)')
 ```
 ## can-i-deploy
 ```bash
@@ -87,6 +88,51 @@ docker run --rm \
  -e PACT_BROKER_PASSWORD \
   pactfoundation/pact-cli:latest \
   broker can-i-deploy \
-  --pacticipant PoC - Pact-broker-consumerr \
+  --pacticipant 'PoC - Pact-broker-consumer' \
   --latest
+```
+
+## Create or Update webhook
+```bash
+docker run --rm \
+ -e PACT_BROKER_BASE_URL \
+ -e PACT_BROKER_USERNAME \
+ -e PACT_BROKER_PASSWORD \
+  pactfoundation/pact-cli:latest \
+  broker create-or-update-webhook \
+  --request=POST \
+  --consumer='PoC - Pact-broker-consumer' \
+  --uuid='09f5cc1b-0386-4ca3-a599-aaf7cafb6804'\
+  --contract-content-changed \
+  --header="Content-Type: application/json" \
+  --header="Accept: application/json" \
+  --header="Authorization : Bearer "$GCP_TOKEN
+
+```
+
+
+
+```bash
+  --broker-base-url="http://35.244.95.135/" \
+  --broker-username="CSPUsr2" \
+  --broker-password="Password1" \
+```
+
+
+```bash
+docker run --rm \
+ -e PACT_BROKER_BASE_URL \
+ -e PACT_BROKER_USERNAME \
+ -e PACT_BROKER_PASSWORD \
+  pactfoundation/pact-cli:latest \
+  broker create-webhook "https://cloudbuild.googleapis.com/v1/projects/poc-pact-broker/triggers/4dd759d0-ecdc-4dd9-ad55-af6dd1d32524:run" \
+  --request=POST \
+  --data='{"branchName": "provider",
+      "repoName": "pact-workshop-js-v1"}' \
+  --consumer='PoC - Pact-broker-consumer' \
+  --provider='PoC - Pact-broker-provider' \
+  --contract-content-changed \
+  --header="Content-Type: application/json" \
+  --header="Accept: application/json" \
+  --header="Authorization : Bearer "$BEAR_TOKEN
 ```
