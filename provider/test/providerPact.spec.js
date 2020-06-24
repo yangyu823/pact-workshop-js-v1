@@ -27,10 +27,10 @@ server.listen(8081, () => {
 describe('Pact Verification', () => {
   it('should validate the expectations of the Consumer', () => {
     let opts = {
-      provider: 'PoC - Pact-broker-provider',
+      provider: 'PoC_provider',
       providerBaseUrl: 'http://localhost:8081',
       providerStatesSetupUrl: 'http://localhost:8081/setup',
-      pactBrokerUrl: 'http://35.244.95.135/',
+      pactBrokerUrl: 'https://bbd-pact-broker-sit.csp.gcpnp.anz/',
       tags: ['prod'],
       pactBrokerUsername: 'CSPUsr2',
       pactBrokerPassword: 'Password1',

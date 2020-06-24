@@ -88,7 +88,7 @@ docker run --rm \
  -e PACT_BROKER_PASSWORD \
   pactfoundation/pact-cli:latest \
   broker can-i-deploy \
-  --pacticipant 'PoC - Pact-broker-consumer' \
+  --pacticipant 'PoC_consumer' \
   --latest
 ```
 
@@ -101,7 +101,7 @@ docker run --rm \
   pactfoundation/pact-cli:latest \
   broker create-or-update-webhook \
   --request=POST \
-  --consumer='PoC - Pact-broker-consumer' \
+  --consumer='PoC_consumer' \
   --uuid='09f5cc1b-0386-4ca3-a599-aaf7cafb6804'\
   --contract-content-changed \
   --header="Content-Type: application/json" \
@@ -129,8 +129,8 @@ docker run --rm \
   --request=POST \
   --data='{"branchName": "provider",
       "repoName": "pact-workshop-js-v1"}' \
-  --consumer='PoC - Pact-broker-consumer' \
-  --provider='PoC - Pact-broker-provider' \
+  --consumer='PoC_consumer' \
+  --provider='PoC_provider' \
   --contract-content-changed \
   --header="Content-Type: application/json" \
   --header="Accept: application/json" \

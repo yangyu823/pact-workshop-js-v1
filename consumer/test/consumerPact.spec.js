@@ -13,8 +13,8 @@ chai.use(chaiAsPromised)
 const LOG_LEVEL = process.env.LOG_LEVEL || 'WARN'
 
 const provider = new Pact({
-  consumer: 'PoC - Pact-broker-consumer',
-  provider: 'PoC - Pact-broker-provider',
+  consumer: 'PoC_consumer',
+  provider: 'PoC_provider',
   port: API_PORT,
   log: path.resolve(process.cwd(), 'logs', 'pact.log'),
   dir: path.resolve(process.cwd(), 'pacts'),
